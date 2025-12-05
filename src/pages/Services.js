@@ -4,7 +4,7 @@ import './Services.css';
 
 import serviceImg1 from '../assets/images/service1.jpg'; 
 import serviceImg2 from '../assets/images/service2.jpg'; 
-import serviceImg3 from '../assets/images/service3.png'; 
+import serviceImg3 from '../assets/images/service3.jpg'; 
 import serviceImg4 from '../assets/images/service4.png'; 
 
 const servicesData = [

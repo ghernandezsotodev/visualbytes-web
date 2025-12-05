@@ -164,21 +164,6 @@
   margin: 0;
 }
 
-/* Mapa */
-.contact-map {
-  margin-top: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.contact-map iframe {
-  width: 100%;
-  height: 250px;
-  border: none;
-  display: block;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   /* FIX: Aseguramos el border-box para que el padding no cause desbordamiento */

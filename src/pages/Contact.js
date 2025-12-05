@@ -148,17 +148,6 @@ const Contact = () => {
             <strong>Dirección</strong>
             <p>Calle 2 #1808, Maule, Chile</p>
           </div>
-
-          <div className="contact-map">
-            <iframe
-              title="Mapa de ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093646!2d144.9537353159048!3d-37.8162793797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1f1f1b7%3A0x4a8a23cf3f99ef67!2sMelbourne%20Central!5e0!3m2!1ses-419!2scl!4v1644682031823!5m2!1ses-419!2scl"
-              width="100%"
-              height="250"
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
         </div>
       </section>
     </div>

@@ -1,0 +1,292 @@
+/* =========================================
+   1. HERO SECTION
+   ========================================= */
+.projects-hero {
+  /* Gradiente Índigo Profundo unificado */
+  background: linear-gradient(135deg, #4F46E5, #3730a3);
+  color: white;
+  text-align: center;
+  padding: 80px 20px; /* Un poco más de altura para presencia */
+}
+
+.projects-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  /* Sombra de texto natural */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.projects-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  color: #E0E7FF; /* Blanco con matiz índigo */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   2. CONTENEDOR PRINCIPAL
+   ========================================= */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================================
+   3. TARJETAS DE PROYECTO
+   ========================================= */
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  /* Sombra tintada en índigo suave */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+  max-width: 380px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  /* Borde muy sutil gris/índigo */
+  border: 1px solid #E5E7EB; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  /* Al flotar, el "glow" índigo se intensifica */
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.15), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+  border-color: #A5B4FC; /* El borde se ilumina */
+}
+
+/* --- SOLUCIÓN DE IMÁGENES --- */
+.project-image-wrapper {
+  width: 100%;
+  height: 260px; /* Altura aumentada para mejor visualización */
+  overflow: hidden;
+  background-color: #F3F4F6; /* Gris suave de fondo para contraste */
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Espacio para que la imagen "respire" y no se corte */
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* CLAVE: Muestra la imagen completa sin recortar */
+  object-position: center;
+  /* Nota: Quitamos el 'scale' en hover porque con 'contain' se ve extraño */
+}
+
+/* =========================================
+   4. CONTENIDO DE LA TARJETA
+   ========================================= */
+.project-content {
+  padding: 24px;
+  text-align: center;
+  flex-grow: 1; /* Empuja el contenido para llenar la altura */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  /* Título en Gris Oscuro Corporativo */
+  color: #1F2937; 
+  font-weight: 700;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  /* Texto descriptivo en gris neutro */
+  color: #4B5563; 
+  line-height: 1.6;
+  margin-bottom: auto; /* Empuja el botón hacia el final */
+}
+
+/* Tags de Tecnologías */
+.project-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.tech-tag {
+  background-color: #E0E7FF; /* Fondo lavanda suave */
+  color: #4F46E5; /* Texto índigo */
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================
+   5. BOTONES (Premium Style)
+   ========================================= */
+.project-button {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background-color: #4F46E5; /* Tu Índigo Vibrante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Sombra suave en reposo */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
+  width: 100%;
+}
+
+.project-button:hover {
+  background-color: #4338ca; /* Un tono más oscuro al hacer hover */
+  transform: translateY(-2px);
+  /* La sombra crece y brilla */
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.1);
+}
+
+.project-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(79, 70, 229, 0.2);
+}
+
+/* =========================================
+   6. MODAL (Detalle del Proyecto)
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.7); /* Backdrop oscuro y moderno */
+  backdrop-filter: blur(4px); /* Desenfoque del fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+  border-top: 5px solid #4F46E5;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  color: #6B7280;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Botón cerrar (X) */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background-color: #F3F4F6;
+  color: #1F2937;
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Cuerpo del Modal */
+.modal-body {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.modal-section {
+  margin-bottom: 25px;
+}
+
+.modal-section h4 {
+  color: #4F46E5;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.modal-section p {
+  color: #374151;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Botón cerrar inferior */
+.submit-button {
+  background-color: #F3F4F6;
+  color: #374151;
+  padding: 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #E5E7EB;
+  color: #1F2937;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,152 @@
+/* Navbar.css */
+.header {
+  /* CAMBIO: Color de respaldo en tu Índigo principal */
+  background-color: #4F46E5; 
+  border-bottom: 1px solid #E5E7EB; /* Borde gris muy suave */
+  position: relative; 
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  /* CAMBIO: Sombra tintada en azul/índigo para consistencia */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+  position: relative;
+  min-height: 70px; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 50px; 
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  /* CAMBIO: Texto en gris oscuro corporativo */
+  color: #1F2937; 
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px 10px;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a.active {
+  /* CAMBIO: El link activo ahora es del color principal sólido y negrita */
+  color: #4F46E5; 
+  font-weight: 700;
+  /* Nota: Eliminé el 'background-clip' porque para colores sólidos es mejor usar 'color' directo */
+}
+
+.nav-links a:hover {
+  /* CAMBIO: Hover en Índigo */
+  color: #4F46E5; 
+  background-color: #F3F4F6; /* Fondo sutil al pasar el mouse */
+  border-radius: 6px;
+}
+
+/* Mobile Styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+  padding: 8px;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  /* CAMBIO: Barras del menú en gris oscuro */
+  background-color: #1F2937; 
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px;
+    min-height: 60px;
+  }
+
+  .logo-image {
+    height: 40px; 
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: #4F46E5; /* Se pone azul al activarse */
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: #4F46E5;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    padding: 15px 20px;
+    display: block;
+    border-bottom: 1px solid #f9fafb;
+  }
+  
+  .nav-links a:hover {
+    background-color: #F9FAFB;
+    border-radius: 0;
+  }
+}

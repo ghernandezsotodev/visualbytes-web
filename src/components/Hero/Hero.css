@@ -1,0 +1,292 @@
+/* Hero Section */
+.hero {
+  /* CAMBIO: Gradiente Índigo para dar profundidad premium */
+  background: linear-gradient(135deg, #4F46E5, #3730a3);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  /* Sombra sutil para levantar el texto del fondo */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+  color: #E0E7FF; /* Blanco con tinte índigo suave */
+}
+
+/* Hero Button */
+.hero-button {
+  background-color: white;
+  /* CAMBIO: Texto del botón en tu color principal */
+  color: #4F46E5; 
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+  /* CAMBIO: Al hacer hover, el texto se oscurece un poco */
+  color: #312E81; 
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Fondo del overlay con un tinte azul muy oscuro en vez de negro puro */
+  background-color: rgba(17, 24, 39, 0.6); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: overlayFade 0.3s ease-out;
+  backdrop-filter: blur(4px); /* Efecto moderno de desenfoque */
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: modalSlideIn 0.3s ease-out;
+  /* Borde superior decorativo */
+  border-top: 4px solid #4F46E5; 
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar del modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  /* CAMBIO: Scrollbar en tu color principal */
+  background: #A5B4FC; /* Lila suave para no ser agresivo */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5; /* Se oscurece al interactuar */
+}
+
+.modal-content h2 {
+  /* CAMBIO: Gris oscuro corporativo */
+  color: #1F2937; 
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-subtitle {
+  /* CAMBIO: Gris medio */
+  color: #4B5563; 
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #F3F4F6;
+  color: #1F2937;
+}
+
+.close-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 0.95rem;
+  /* CAMBIO: Color de etiqueta sólido */
+  color: #1F2937; 
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  /* CAMBIO: Borde suave índigo/gris */
+  border: 1px solid #E5E7EB; 
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background-color: #F9FAFB;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  /* CAMBIO: Foco en Índigo vibrante */
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background-color: #fff;
+  outline: none;
+}
+
+.submit-button {
+  /* CAMBIO: Botón principal en Índigo */
+  background-color: #4F46E5; 
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submit-button:hover {
+  /* CAMBIO: Hover más oscuro y elegante */
+  background-color: #4338ca; 
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.submit-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.success-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  /* Mantenemos el verde para éxito, pero un tono más moderno (Emerald) */
+  background-color: #059669; 
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInOut 5s ease-in-out;
+  z-index: 1100;
+}
+
+.check-icon {
+  font-size: 20px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

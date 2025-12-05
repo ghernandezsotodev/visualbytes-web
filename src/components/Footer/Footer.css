@@ -1,0 +1,146 @@
+.footer {
+  /* CAMBIO: Usamos el Índigo Profundo en lugar del gris oscuro/negro */
+  background: #312E81; 
+  color: #E0E7FF; /* Blanco con un matiz índigo muy suave (Indigo-100) */
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  /* Sombra más integrada con el tono azul */
+  box-shadow: 0 -3px 20px rgba(49, 46, 129, 0.4); 
+  margin-top: 3rem;
+  position: relative; /* Necesario para que el ::before se posicione bien */
+  overflow: hidden; /* Evita que el efecto de luz desborde la página */
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  /* CAMBIO: El brillo ahora es del color primario (#4F46E5) difuminado */
+  background: rgba(79, 70, 229, 0.2); 
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(60px);
+  pointer-events: none; /* Asegura que no interfiera con clicks */
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Para estar por encima del fondo borroso */
+  z-index: 1;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.footer-text-logo {
+  width: 240px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.footer-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  /* CAMBIO: Color lavanda claro para mejor lectura sobre azul */
+  color: #C7D2FE; 
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Efecto cristal sobre el fondo azul */
+  background: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.social-icon i {
+  font-size: 22px;
+  color: #E0E7FF;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  /* CAMBIO: Al pasar el mouse, se enciende con el Índigo Vibrante (#4F46E5) */
+  background: #4F46E5; 
+  border-color: #4F46E5;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.6); /* Glow al hover */
+}
+
+.social-icon:hover i {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  /* Borde superior en azul muy claro y transparente */
+  border-top: 1px solid rgba(199, 210, 254, 0.1); 
+  padding-top: 1rem;
+  color: #818CF8; /* Texto de copyright en un tono suave */
+}
+
+/* 🌐 Responsividad para móviles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-logo {
+    width: 80px;
+  }
+
+  .footer-text-logo {
+    width: 150px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon i {
+    font-size: 20px;
+  }
+
+  .footer-description {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+}

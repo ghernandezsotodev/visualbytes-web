@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  /* Agregamos suavizado de fuentes para que se vea más premium */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  /* Opcional: Una sombra suave para darle volumen al logo sobre el fondo */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* CAMBIO: Reemplazamos el gris default (#282c34) por tu identidad Índigo Profundo */
+  background: linear-gradient(135deg, #4F46E5, #312E81);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  /* CAMBIO: Usamos el Lila Acento (#A5B4FC) en lugar del azul React default */
+  color: #A5B4FC;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  /* Al pasar el mouse, se vuelve blanco puro */
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Fondo base consistente por si alguna sección no tiene background definido */
+  background-color: #ffffff; 
+  color: #1F2937; /* Color de texto base (Gris Corporativo) */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* --- DETALLE PRO: Color de selección de texto --- */
+::selection {
+  background-color: #4F46E5; /* Tu color principal */
+  color: white;
+}
+
+/* Personalización de la scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Un pelín más ancha para mejor usabilidad */
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F9FAFB; /* Gris muy pálido, casi blanco */
+}
+
+::-webkit-scrollbar-thumb {
+  /* CAMBIO: Usamos un índigo muy suave en reposo para no distraer */
+  background-color: #C7D2FE; 
+  border-radius: 10px;
+  border: 2px solid #F9FAFB; /* Crea un efecto de "padding" visual */
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* CAMBIO: Al querer scrollear, se enciende con tu color principal */
+  background-color: #4F46E5; 
+}

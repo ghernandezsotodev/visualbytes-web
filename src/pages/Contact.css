@@ -1,0 +1,204 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.contact-hero {
+  /* CAMBIO: Gradiente Índigo Profundo (Igual que el Hero principal) */
+  background: linear-gradient(135deg, #4F46E5, #3730a3);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  /* Sombra más natural y menos tintada */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); 
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  color: #E0E7FF; /* Blanco con matiz índigo */
+}
+
+/* Contenedor principal */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  /* CAMBIO: Sombra índigo suave */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+  /* Borde superior en Índigo Vibrante */
+  border-top: 4px solid #4F46E5; 
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  /* CAMBIO: Gris oscuro corporativo */
+  color: #1F2937; 
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  /* CAMBIO: Gris oscuro */
+  color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 10px;
+  margin-top: 5px;
+  /* CAMBIO: Borde gris neutro */
+  border: 1px solid #D1D5DB; 
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #1F2937; /* Texto negro suave */
+  transition: all 0.3s ease;
+  background-color: #F9FAFB; /* Fondo gris muy claro */
+}
+
+/* Efecto visual al escribir en los inputs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  /* CAMBIO: Foco en Índigo */
+  border-color: #4F46E5;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.contact-form button {
+  margin-top: 20px;
+  width: 100% !important;
+  padding: 12px;
+  background-color: #4F46E5; /* Color Principal */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  /* CAMBIO: Índigo más oscuro al hover */
+  background-color: #4338ca; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+/* Información de Contacto */
+.contact-info {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  /* Sombra consistente */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+  border-top: 4px solid #4F46E5; 
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  /* CAMBIO: Gris oscuro corporativo */
+  color: #1F2937; 
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 10px 0;
+  /* CAMBIO: Gris medio para lectura */
+  color: #4B5563; 
+}
+
+.contact-info strong {
+  /* Dato importante en Índigo */
+  color: #4F46E5; 
+  font-weight: 700;
+}
+
+/* Mapa */
+.contact-map iframe {
+  width: 100%;
+  border-radius: 10px;
+  /* Sombra sutil índigo */
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 10px;
+  }
+
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding: 40px 10px;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 20px;
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .contact-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,115 @@
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9fafb; /* Fondo claro (Gris muy suave) */
+}
+
+.services h2 {
+  font-size: 3rem;
+  /* CAMBIO: Gris Corporativo Oscuro */
+  color: #1F2937; 
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-description {
+  font-size: 1.2rem;
+  /* CAMBIO: Gris medio con tono frío */
+  color: #4B5563; 
+  margin-bottom: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem; /* Un poco más de aire arriba */
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 12px; /* Bordes un poco más redondeados y modernos */
+  /* CAMBIO: Sombra tintada en índigo y borde sutil */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1); 
+  border: 1px solid #E0E7FF; 
+  width: 30%;
+  padding: 2.5rem 2rem; /* Más padding interno para elegancia */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  /* CAMBIO: Sombra más intensa en índigo al flotar */
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.25);
+  border-color: #A5B4FC; /* El borde se ilumina suavemente */
+}
+
+.service-icon {
+  width: 220px;
+  height: 220px;
+  /* Corregido el error de sintaxis "0, 8rem" */
+  margin-bottom: 1.5rem; 
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  /* CAMBIO: Título en tu color Principal (Índigo) */
+  color: #4F46E5; 
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #4B5563; /* Gris lectura */
+  margin-bottom: 2rem; /* Más espacio antes del botón */
+  line-height: 1.6;
+}
+
+.service-button {
+  /* CAMBIO: Botón en Índigo */
+  background-color: #4F46E5; 
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.service-button:hover {
+  /* CAMBIO: Hover en Índigo Oscuro */
+  background-color: #4338ca; 
+  transform: translateY(-2px); /* Pequeño efecto click */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 992px) {
+  .service-card {
+    width: 45%; /* En tablets, 2 por fila */
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    width: 100%; /* En móviles, 1 por fila */
+    margin-bottom: 1.5rem;
+  }
+
+  .services-container {
+    justify-content: center;
+  }
+  
+  .services h2 {
+    font-size: 2.5rem;
+  }
+}

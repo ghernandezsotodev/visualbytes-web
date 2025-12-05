@@ -1,0 +1,193 @@
+/* Hero Section */
+.services-hero {
+  /* CAMBIO: Gradiente Índigo Profundo unificado */
+  background: linear-gradient(135deg, #4F46E5, #3730a3);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.services-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  /* Sombra de texto suave */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.services-hero p {
+  font-size: 1.2rem;
+  /* CAMBIO: Blanco con matiz índigo */
+  color: #E0E7FF;
+  opacity: 0.95;
+}
+
+/* Introducción */
+.services-intro {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  /* CAMBIO: Gris lectura corporativo */
+  color: #4B5563; 
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Grid de Servicios */
+.services-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.service-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px; /* Bordes más modernos */
+  /* CAMBIO: Sombra índigo suave + Borde sutil */
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+  border: 1px solid #E5E7EB;
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  /* CAMBIO: Glow índigo al flotar */
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.15), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+  border-color: #A5B4FC; /* Borde se ilumina */
+}
+
+.service-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  /* CAMBIO: Gris Oscuro Corporativo */
+  color: #1F2937; 
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.service-item p {
+  font-size: 1rem;
+  /* CAMBIO: Gris medio */
+  color: #4B5563; 
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  /* CAMBIO: Verde Esmeralda (Más moderno y elegante que el verde básico) */
+  color: #059669; 
+  display: block;
+  margin-bottom: 15px;
+  /* Fondo muy suave verde para resaltar el precio */
+  background-color: #ECFDF5;
+  padding: 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Sección "¿Por qué elegirnos?" */
+.why-choose-us {
+  /* CAMBIO: Fondo gris muy claro para separar secciones */
+  background: #F9FAFB; 
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1F2937;
+  font-weight: 700;
+}
+
+.benefits {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.benefit {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  /* Sombra suave */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E5E7EB;
+  width: 280px;
+  /* Decoración superior en tu color principal */
+  border-top: 4px solid #4F46E5; 
+  transition: transform 0.2s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-3px);
+}
+
+.benefit h3 {
+  /* CAMBIO: Color Principal Índigo */
+  color: #4F46E5; 
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.benefit p {
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* Testimonios */
+.testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1F2937;
+  font-weight: 700;
+}
+
+.testimonial {
+  background: #F9FAFB; /* Fondo gris muy suave para destacar sobre el blanco */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  width: 90%; /* Un poco más ancho en móviles */
+  max-width: 700px;
+  /* Decoración lateral estilo cita */
+  border-left: 4px solid #4F46E5; 
+  text-align: left; /* Alineación izquierda para mejor lectura de citas */
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  color: #374151; /* Gris oscuro para el texto de la cita */
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 15px;
+  color: #4F46E5; /* Nombre en tu color principal */
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.95rem;
+}

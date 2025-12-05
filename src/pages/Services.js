@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Services.css';
 
-import serviceImg1 from '../assets/images/service1.jpg'; 
-import serviceImg2 from '../assets/images/service2.jpg'; 
-import serviceImg3 from '../assets/images/service3.jpg'; 
-import serviceImg4 from '../assets/images/service4.png'; 
+import serviceImg1 from '../assets/images/service1.webp'; 
+import serviceImg2 from '../assets/images/service2.webp'; 
+import serviceImg3 from '../assets/images/service3.webp'; 
+import serviceImg4 from '../assets/images/service4.webp'; 
 
 const servicesData = [
   {

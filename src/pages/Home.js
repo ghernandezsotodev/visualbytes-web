@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../components/Hero/Hero.css';
 import './Home.css';
-import santaRitaMockup from '../assets/images/mockup-santa-rita.png';
+import santaRitaMockup from '../assets/images/mockup-santa-rita.webp';
 
 const Home = () => {
   return (

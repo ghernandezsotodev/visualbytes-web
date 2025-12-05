@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
 
-import projectImage from '../assets/images/project1.png'; 
+import projectImage from '../assets/images/project1.webp'; 
 import projectImage2 from '../assets/images/project2.png';
 
 const projectsData = [
@@ -11,6 +11,7 @@ const projectsData = [
     tags: ['Laravel 12', 'Kotlin Nativo', 'AWS S3', 'Redis', 'Docker'],
     image: projectImage, 
     shortDescription: 'Plataforma integral de gestión comunitaria. Ecosistema distribuido (Web + App Nativa) con transparencia financiera.',
+    liveLink: 'https://www.santaritaconectada.cl/',
     fullDescription: {
       problem: 'La organización enfrentaba procesos manuales críticos, pérdida de información histórica en cuadernos, opacidad financiera y una brecha digital en sus usuarios.',      
       solution: 'Diseñamos un ecosistema distribuido robusto. Backend API RESTful en Laravel 12 gestionando roles (RBAC) y tesorería. App nativa Android (Kotlin + Compose) con arquitectura MVVM. Sistema de notificaciones multicanal procesado vía colas en Redis.',
@@ -24,6 +25,7 @@ const projectsData = [
       tags: ['Astro', 'Tailwind CSS', 'TypeScript', 'Netlify'],
       image: projectImage2,
       shortDescription: 'Sitio corporativo ultrarrápido para empresa de servicios industriales.',
+      liveLink: 'https://www.seguricor.cl/',
       fullDescription: {
         problem: 'La empresa requería digitalizar su catálogo de Cortinas Metálicas con foco en captación de leads y posicionamiento local.',
         solution: 'Arquitectura SSG (Static Site Generation) con Astro para velocidad máxima. Implementación de formularios serverless con Netlify y diseño UI moderno con Tailwind.', 

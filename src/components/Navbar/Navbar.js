@@ -2,50 +2,57 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
+// IMPORTAMOS TU LOGO REAL
+import logoNavbar from '../../assets/images/logo-visualbytes.png';
+
 const Navbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const closeMenu = () => setIsMobileMenuOpen(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const navItems = [
+    { path: '/', label: 'Inicio' },
+    { path: '/services', label: 'Servicios' },
+    { path: '/projects', label: 'Proyectos' },
+    { path: '/contact', label: 'Contacto' }
+  ];
 
   return (
     <header className="header">
       <nav className="navbar">
-        <Link to="/" className="logo">
-          <img
-            src={`${process.env.PUBLIC_URL}/logotipo.png`}
-            alt="Mi Pyme Logo"
-            className="logo-image"
+        {/* LOGO CON IMAGEN REAL */}
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <img 
+            src={logoNavbar} 
+            alt="VisualBytes" 
+            className="logo-image" 
           />
         </Link>
 
-        <div
+        {/* Botón Hamburguesa */}
+        <button 
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
           aria-label="Toggle navigation menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </div>
+        </button>
 
+        {/* Links */}
         <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          {['/', '/services', '/projects', '/contact'].map((path) => (
-            <li key={path}>
+          {navItems.map((item) => (
+            <li key={item.path}>
               <Link
-                to={path}
-                className={location.pathname === path ? 'active' : ''}
-                onClick={() => setIsMobileMenuOpen(false)}
+                to={item.path}
+                className={location.pathname === item.path ? 'active' : ''}
+                onClick={closeMenu}
               >
-                {path === '/'
-                  ? 'Inicio'
-                  : path === '/services'
-                    ? 'Servicios'
-                    : path === '/projects'
-                      ? 'Proyectos'
-                      : 'Contacto'}
+                {item.label}
               </Link>
             </li>
           ))}

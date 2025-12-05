@@ -1,42 +1,61 @@
+:root {
+  /* --- DESIGN SYSTEM: ÍNDIGO PROFUNDO --- */
+  
+  /* Paleta Principal */
+  --primary: #4F46E5;       /* Índigo Vibrante */
+  --primary-hover: #4338CA; /* Un tono más oscuro para hovers */
+  
+  /* Textos */
+  --text-main: #1F2937;     /* Gris Corporativo (Títulos) */
+  --text-secondary: #4B5563; /* Gris suave (Párrafos) */
+  --text-light: #9CA3AF;    /* Gris muy claro (Placeholders/Disabled) */
+
+  /* Fondos */
+  --bg-white: #FFFFFF;
+  --bg-ice: #F9FAFB;        /* Gris Hielo para secciones alternas */
+
+  /* UI Elements */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --radius-lg: 12px;        /* Bordes redondeados */
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Fondo base consistente por si alguna sección no tiene background definido */
-  background-color: #ffffff; 
-  color: #1F2937; /* Color de texto base (Gris Corporativo) */
+  background-color: var(--bg-white);
+  color: var(--text-main);
+  line-height: 1.5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* --- DETALLE PRO: Color de selección de texto --- */
+/* --- DETALLE PRO: Color de selección --- */
 ::selection {
-  background-color: #4F46E5; /* Tu color principal */
+  background-color: var(--primary);
   color: white;
 }
 
-/* Personalización de la scrollbar (Chrome, Edge, Safari) */
+/* --- SCROLLBAR PERSONALIZADA (Corregida) --- */
 ::-webkit-scrollbar {
-  width: 10px; /* Un pelín más ancha para mejor usabilidad */
-  height: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #F9FAFB; /* Gris muy pálido, casi blanco */
+  background-color: var(--bg-ice);
 }
 
 ::-webkit-scrollbar-thumb {
-  /* CAMBIO: Usamos un índigo muy suave en reposo para no distraer */
-  background-color: #C7D2FE; 
+  background-color: #C7D2FE; /* Índigo muy suave */
   border-radius: 10px;
-  border: 2px solid #F9FAFB; /* Crea un efecto de "padding" visual */
+  border: 2px solid var(--bg-ice);
   transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  /* CAMBIO: Al querer scrollear, se enciende con tu color principal */
-  background-color: #4F46E5; 
+  background-color: var(--primary);
 }

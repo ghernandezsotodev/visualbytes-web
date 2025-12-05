@@ -1,50 +1,55 @@
 import React from 'react';
 import './Footer.css';
-import 'font-awesome/css/font-awesome.min.css';
-import logo from '../../assets/images/logo-footer.png';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+// IMPORTAMOS TU LOGO BLANCO
+import logoFooter from '../../assets/images/logo-visualbytes-white.png';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer-content">
-        {/* Logo y descripción */}
         <div className="logo-container">
-          <img src={logo} alt="VisualBytes Logo" className="footer-logo" />
+            {/* Logo en lugar de texto */}
+            <img 
+                src={logoFooter} 
+                alt="VisualBytes Logo" 
+                className="footer-logo-img" 
+            />
         </div>
 
         <p className="footer-description">
-          Construyendo experiencias digitales.
+          Construyendo experiencias digitales robustas y elegantes.
         </p>
 
-        {/* Redes sociales */}
         <div className="social-icons">
-          <SocialIcon link="https://facebook.com" icon="fa-facebook" />
-          <SocialIcon link="https://twitter.com" icon="fa-twitter" />
-          <SocialIcon link="https://instagram.com" icon="fa-instagram" />
-          <SocialIcon link="https://linkedin.com" icon="fa-linkedin" />
+          <SocialIcon link="https://facebook.com" icon={<FaFacebook />} />
+          <SocialIcon link="https://twitter.com" icon={<FaTwitter />} />
+          <SocialIcon link="https://instagram.com" icon={<FaInstagram />} />
+          <SocialIcon link="https://linkedin.com" icon={<FaLinkedin />} />
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>
-          &copy; {new Date().getFullYear()} VisualBytes. Todos los derechos
-          reservados.
+          © {currentYear} VisualBytes. Todos los derechos reservados.
         </p>
       </div>
     </footer>
   );
 };
 
-// Componente de iconos sociales reutilizable
 const SocialIcon = ({ link, icon }) => (
   <a
     href={link}
     target="_blank"
     rel="noopener noreferrer"
     className="social-icon"
+    aria-label="Social Link"
   >
-    <i className={`fa ${icon}`}></i>
+    {icon}
   </a>
 );
 

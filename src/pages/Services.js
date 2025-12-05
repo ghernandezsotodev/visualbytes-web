@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
 import './Services.css';
 
-// Imágenes
 import serviceImg1 from '../assets/images/service1.png'; 
 import serviceImg2 from '../assets/images/service2.png'; 
 import serviceImg3 from '../assets/images/service3.png'; 
@@ -14,18 +11,18 @@ const servicesData = [
     id: 1,
     category: "EL NÚCLEO TECNOLÓGICO",
     title: '01. Ingeniería de Software & Arquitectura',
-    subtitle: 'Sistemas diseñados para soportar la operación crítica de tu negocio.',
+    subtitle: 'Sistemas diseñados para soportar la operación crítica de tu negocio.',  
     image: serviceImg1,
     features: [
-        { bold: 'Backends de Alto Rendimiento:', text: 'APIs RESTful complejas y desacopladas (Laravel 12 / Java Spring Boot).' },
-        { bold: 'Procesamiento Asíncrono:', text: 'Colas de trabajo con Redis para tareas pesadas sin afectar al usuario.' },
+        { bold: 'Backends de Alto Rendimiento:', text: 'APIs RESTful complejas y desacopladas (Laravel 12 / Java Spring Boot / Flask / FastAPI / Django).' },
+        { bold: 'Procesamiento Asíncrono:', text: 'Colas de trabajo con Redis para tareas pesadas sin afectar al usuario.' },    
         { bold: 'Seguridad Empresarial:', text: 'Autenticación OAuth2/Sanctum, RBAC y protección de datos.' },
         { bold: 'Infraestructura Escalable:', text: 'Docker y gestión de servidores Cloud (AWS/DigitalOcean).' }
     ]
   },
   {
     id: 2,
-    category: "", // Se mantiene vacío para limpieza visual al ser del mismo bloque
+    category: "", // Vacío por estética
     title: '02. Desarrollo Móvil Nativo (Android)',
     subtitle: 'Llevamos tu operación al terreno con aplicaciones reales.',
     image: serviceImg2,
@@ -36,9 +33,21 @@ const servicesData = [
     ]
   },
   {
-    id: 3,
+    id: 3, 
+    category: "IMPACTO VISUAL",
+    title: '03. Diseño UI/UX & Branding', 
+    subtitle: 'Diseño que no solo se ve bien, sino que cumple objetivos de negocio.',
+    image: serviceImg1,
+    features: [
+        { bold: 'Diseño de Interfaces (UI/UX):', text: 'Prototipado en Figma enfocado en usabilidad y conversión.' },
+        { bold: 'Identidad Visual:', text: 'Logotipos y branding corporativo (Adobe Illustrator/Photoshop).' },
+        { bold: 'Modelado 3D:', text: 'Elementos 3D publicitarios de alto impacto en Cinema 4D.' }
+    ]
+  },
+  {
+    id: 4, 
     category: "ESTRATEGIA Y NEGOCIOS",
-    title: '03. Control de Gestión & BI',
+    title: '04. Control de Gestión & BI', 
     subtitle: 'Transformamos datos dispersos en decisiones estratégicas.',
     image: serviceImg3,
     features: [
@@ -46,26 +55,14 @@ const servicesData = [
         { bold: 'Dashboards & KPIs:', text: 'Paneles en Power BI para monitoreo de desempeño en tiempo real.' },
         { bold: 'Gestión de Riesgos:', text: 'Detección de fugas e ineficiencias para soluciones de raíz.' }
     ]
-  },
-  {
-    id: 4,
-    category: "IMPACTO VISUAL",
-    title: '04. Diseño UI/UX & Branding',
-    subtitle: 'Diseño que no solo se ve bien, sino que cumple objetivos de negocio.',
-    image: serviceImg1, 
-    features: [
-        { bold: 'Diseño de Interfaces (UI/UX):', text: 'Prototipado en Figma enfocado en usabilidad y conversión.' },
-        { bold: 'Identidad Visual:', text: 'Logotipos y branding corporativo (Adobe Illustrator/Photoshop).' },
-        { bold: 'Modelado 3D:', text: 'Elementos 3D publicitarios de alto impacto en Cinema 4D.' }
-    ]
   }
 ];
 
 const Services = () => {
   return (
     <div className="services-page">
-      <Navbar />
-      
+      {/* Navbar eliminado (ya está en App.js) */}
+
       {/* HEADER / TÍTULO */}
       <header className="services-hero">
         <h1>Ingeniería, Gestión y Diseño</h1>
@@ -77,12 +74,16 @@ const Services = () => {
         {servicesData.map((service) => (
           <div key={service.id} className="service-card-detail">
             <div className="service-img-container">
-                 <img src={service.image} alt={service.title} />
+                 {/* Añadimos onError por si falla la imagen */}
+                 <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    onError={(e) => {e.target.style.display='none'}}
+                 />
             </div>
             <div className="service-info">
-                {/* Renderizado condicional: Solo muestra la categoría si tiene texto */}
                 {service.category && <span className="service-category">{service.category}</span>}
-                
+
                 <h3>{service.title}</h3>
                 <p className="service-subtitle">{service.subtitle}</p>
                 <ul className="service-features">
@@ -97,32 +98,37 @@ const Services = () => {
         ))}
       </section>
 
-      {/* BLOQUE DE CIERRE: METODOLOGÍA (Versión Clean) */}
+      {/* BLOQUE DE CIERRE: METODOLOGÍA */}
       <section className="methodology-section">
         <div className="methodology-container">
             <h2>¿Cómo trabajamos?</h2>
             <p className="methodology-intro">Fusionamos metodologías ágiles con el rigor de la auditoría.</p>
-            
+
             <div className="methodology-steps">
                 <div className="step">
                     <div className="step-number">01</div>
-                    <h4>Diagnóstico</h4>
-                    <p>Auditoría para entender el negocio y los "dolores" operativos.</p>
+                    <h4>Análisis Estratégico & KPIs</h4>
+                    <p>Auditoría de Procesos (BPMN) y definición de indicadores clave de rendimiento (KPIs) para asegurar la viabilidad y rentabilidad del proyecto.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">02</div>
-                    <h4>Diseño (UI/UX)</h4>
-                    <p>Prototipamos la solución visual antes de escribir código.</p>
+                    <h4>UX/UI & Prototipado</h4>
+                    <p>Diseño de la experiencia de usuario y prototipado interactivo en Figma para obtener la solución visual antes de escribir la primera línea de código.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">03</div>
-                    <h4>Ingeniería</h4>
-                    <p>Construcción robusta con código limpio (Laravel/Kotlin).</p>
+                    <h4>Ingeniería & QA</h4>
+                    <p>Construcción robusta con arquitectura limpia, código versionado (Git), y aseguramiento de calidad (QA) que garantiza estabilidad y seguridad.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">04</div>
-                    <h4>Entrega y BI</h4>
-                    <p>Lanzamiento y medición de impacto con datos reales.</p>
+                    <h4>DevOps & Despliegue</h4>
+                    <p>Despliegue automatizado del sistema en contenedores Docker y ambientes Cloud (AWS), garantizando la disponibilidad y la escalabilidad.</p>
+                </div>
+                <div className="step">
+                    <div className="step-number">05</div>
+                    <h4>Control de Gestión & BI</h4>
+                    <p>Medición de los KPIs definidos en la Fase 1 y creación de Dashboards en Power BI para validar el retorno de la inversión (ROI) con datos reales.</p>
                 </div>
             </div>
 
@@ -136,7 +142,7 @@ const Services = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* Footer eliminado (ya está en App.js) */}
     </div>
   );
 };

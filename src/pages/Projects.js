@@ -3,8 +3,6 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Projects.css';
 
-// Usamos una imagen genérica por ahora, asegúrate de tener imágenes en tu carpeta assets
-// Si no tienes la imagen específica, react usará la genérica sin romperse
 import projectImage from '../assets/images/project1.png'; 
 import projectImage2 from '../assets/images/project2.png'
 
@@ -12,31 +10,30 @@ const projectsData = [
   {
     id: 1,
     title: 'Santa Rita Conectada',
-    tags: ['Laravel 12', 'Kotlin Nativo', 'AWS S3', 'Docker', 'Redis'],
-    image: projectImage, // Idealmente cambia esto por una captura real de tu tesis
-    shortDescription: 'Ecosistema de gestión comunitaria. Migración de procesos análogos a arquitectura Cloud híbrida.',
+    tags: ['Laravel 12', 'Kotlin Nativo', 'AWS S3', 'Redis', 'Docker'],
+    image: projectImage, 
+    shortDescription: 'Plataforma integral de gestión comunitaria. Ecosistema distribuido (Web + App Nativa) con transparencia financiera.',
     fullDescription: {
-      problem: 'La Junta de Vecinos operaba con cuadernos físicos, generando pérdida de información histórica, desinformación vecinal y opacidad financiera.',
-      solution: 'Arquitectura híbrida escalable. Backend en Laravel 12 con patrón de capas, App nativa Android (Kotlin + Jetpack Compose) y despliegue en VPS con Docker.',
-      impact: 'Digitalización total de socios, transparencia financiera en tiempo real y comunicación push inmediata.',
-      team: 'Arquitectura y Desarrollo Full-Stack + Diseño UI/UX y Control de Gestión.'
+      problem: 'La organización enfrentaba procesos manuales críticos, pérdida de información histórica en cuadernos, opacidad financiera y una brecha digital en sus usuarios.',
+      solution: 'Diseñamos un ecosistema distribuido robusto. Backend API RESTful en Laravel 12 gestionando roles (RBAC) y tesorería. App nativa Android (Kotlin + Compose) con arquitectura MVVM. Sistema de notificaciones multicanal procesado vía colas en Redis.',
+      impact: 'Transparencia total en balances financieros, aumento en la participación de socios, eliminación de burocracia en papel y seguridad de datos garantizada en AWS.',
+      team: 'Arquitectura y Desarrollo Full-Stack (Gonzalo) + Diseño UI/UX y Control de Gestión (Marcelo).'
     }
   },
   {
       id: 2,
       title: 'Seguricor Web',
-      // Cambio: Quitamos React, añadimos TypeScript (o JavaScript) y Netlify
       tags: ['Astro', 'Tailwind CSS', 'TypeScript', 'Netlify'], 
       image: projectImage2, 
       shortDescription: 'Sitio corporativo ultrarrápido para empresa de servicios industriales.',
       fullDescription: {
         problem: 'La empresa requería digitalizar su catálogo de Cortinas Metálicas con foco en captación de leads y posicionamiento local.',
-        solution: 'Arquitectura SSG (Static Site Generation) con Astro para velocidad máxima. Implementación de formularios serverless con Netlify y diseño UI moderno con Tailwind.',
+        solution: 'Arquitectura SSG (Static Site Generation) con Astro para velocidad máxima. Implementación de formularios serverless con Netlify y diseño UI moderno con Tailwind.', 
         impact: 'Puntaje de 100/100 en Lighthouse (Core Web Vitals), SEO técnico optimizado y gestión de contactos automatizada.',
         team: 'Desarrollo Fullstack y Diseño UI/UX.'
       }
   },
-  // Puedes agregar más proyectos aquí
+  
 ];
 
 const Projects = () => {

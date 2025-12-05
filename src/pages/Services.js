@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import './Services.css';
 
-// Usamos tus imágenes existentes. 
-// TIP: Para el futuro, busca íconos o fotos que representen: Código, Móvil, Finanzas/Auditoría y Diseño.
+// Imágenes
 import serviceImg1 from '../assets/images/service1.png'; 
 import serviceImg2 from '../assets/images/service2.png'; 
 import serviceImg3 from '../assets/images/service3.png'; 
@@ -12,31 +12,52 @@ import serviceImg3 from '../assets/images/service3.png';
 const servicesData = [
   {
     id: 1,
-    title: 'Desarrollo de Software a Medida',
-    description: 'Sistemas robustos y escalables. Backend en Laravel 12 con Docker y Frontends rápidos en React o Astro. Arquitectura limpia para negocios que necesitan crecer.',
+    category: "EL NÚCLEO TECNOLÓGICO",
+    title: '01. Ingeniería de Software & Arquitectura',
+    subtitle: 'Sistemas diseñados para soportar la operación crítica de tu negocio.',
     image: serviceImg1,
-    highlight: 'Laravel & Docker'
+    features: [
+        { bold: 'Backends de Alto Rendimiento:', text: 'APIs RESTful complejas y desacopladas (Laravel 12 / Java Spring Boot).' },
+        { bold: 'Procesamiento Asíncrono:', text: 'Colas de trabajo con Redis para tareas pesadas sin afectar al usuario.' },
+        { bold: 'Seguridad Empresarial:', text: 'Autenticación OAuth2/Sanctum, RBAC y protección de datos.' },
+        { bold: 'Infraestructura Escalable:', text: 'Docker y gestión de servidores Cloud (AWS/DigitalOcean).' }
+    ]
   },
   {
     id: 2,
-    title: 'Desarrollo Android Móvil Nativo',
-    description: 'No hacemos apps híbridas lentas. Desarrollamos 100% nativo en Android con Kotlin y Jetpack Compose para garantizar el máximo rendimiento y fluidez.',
+    category: "", // Se mantiene vacío para limpieza visual al ser del mismo bloque
+    title: '02. Desarrollo Móvil Nativo (Android)',
+    subtitle: 'Llevamos tu operación al terreno con aplicaciones reales.',
     image: serviceImg2,
-    highlight: 'Kotlin Nativo'
+    features: [
+        { bold: '100% Nativo:', text: 'Kotlin con Jetpack Compose. Rendimiento real, sin tecnologías híbridas.' },
+        { bold: 'Funcionalidad Offline:', text: 'Persistencia de datos local (Room) y sincronización automática.' },
+        { bold: 'Integración Total:', text: 'Comunicación vía Retrofit y alertas en tiempo real con Notificaciones Push.' }
+    ]
   },
   {
     id: 3,
-    title: 'Control de Gestión & Procesos',
-    description: 'Aplicamos visión de auditoría para analizar, corregir y optimizar los flujos de tu negocio antes de digitalizarlos. Software que cuadra financieramente.',
-    image: serviceImg3, // Si tienes una imagen más "administrativa", úsala aquí
-    highlight: 'Auditoría & KPIs'
+    category: "ESTRATEGIA Y NEGOCIOS",
+    title: '03. Control de Gestión & BI',
+    subtitle: 'Transformamos datos dispersos en decisiones estratégicas.',
+    image: serviceImg3,
+    features: [
+        { bold: 'Auditoría de Procesos:', text: 'Analizamos y optimizamos flujos operativos antes de digitalizar.' },
+        { bold: 'Dashboards & KPIs:', text: 'Paneles en Power BI para monitoreo de desempeño en tiempo real.' },
+        { bold: 'Gestión de Riesgos:', text: 'Detección de fugas e ineficiencias para soluciones de raíz.' }
+    ]
   },
   {
     id: 4,
-    title: 'Diseño Gráfico & UI/UX',
-    description: 'Identidad visual completa. Desde logotipos y branding corporativo hasta el diseño de interfaces de usuario intuitivas y profesionales con Adobe Suite.',
-    image: serviceImg1, // Reutilizamos la 1 por ahora si no tienes una 4ta imagen
-    highlight: 'Branding & UI'
+    category: "IMPACTO VISUAL",
+    title: '04. Diseño UI/UX & Branding',
+    subtitle: 'Diseño que no solo se ve bien, sino que cumple objetivos de negocio.',
+    image: serviceImg1, 
+    features: [
+        { bold: 'Diseño de Interfaces (UI/UX):', text: 'Prototipado en Figma enfocado en usabilidad y conversión.' },
+        { bold: 'Identidad Visual:', text: 'Logotipos y branding corporativo (Adobe Illustrator/Photoshop).' },
+        { bold: 'Modelado 3D:', text: 'Elementos 3D publicitarios de alto impacto en Cinema 4D.' }
+    ]
   }
 ];
 
@@ -45,52 +66,73 @@ const Services = () => {
     <div className="services-page">
       <Navbar />
       
-      {/* HERO SECTION */}
+      {/* HEADER / TÍTULO */}
       <header className="services-hero">
-        <h1>Soluciones Integrales</h1>
-        <p>Donde la Ingeniería Informática se encuentra con el Diseño y la Gestión.</p>
+        <h1>Ingeniería, Gestión y Diseño</h1>
+        <p>No vendemos "sitios web". Desarrollamos activos digitales que optimizan procesos, reducen riesgos y construyen marca.</p>
       </header>
 
-      {/* INTRODUCCIÓN ESTRATÉGICA */}
-      <section className="services-intro">
-        <p>
-          En <strong>VisualBytes</strong>, no solo programamos. Ofrecemos un enfoque multidisciplinario 
-          que combina la lógica técnica de un <strong>Ingeniero Informático</strong> con la visión estratégica 
-          y estética de un <strong>Auditor y Diseñador</strong>.
-        </p>
-      </section>
-
-      {/* GRID DE SERVICIOS */}
+      {/* GRID DE SERVICIOS DETALLADOS */}
       <section className="services-grid">
         {servicesData.map((service) => (
-          <div key={service.id} className="service-item">
-            <div className="image-wrapper" style={{height: '180px', overflow: 'hidden', borderRadius: '8px 8px 0 0', marginBottom: '15px'}}>
-                 <img src={service.image} alt={service.title} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          <div key={service.id} className="service-card-detail">
+            <div className="service-img-container">
+                 <img src={service.image} alt={service.title} />
             </div>
-            
-            <h3>{service.title}</h3>
-            <span className="price">{service.highlight}</span> {/* Usamos la clase 'price' para el destacado técnico */}
-            <p>{service.description}</p>
+            <div className="service-info">
+                {/* Renderizado condicional: Solo muestra la categoría si tiene texto */}
+                {service.category && <span className="service-category">{service.category}</span>}
+                
+                <h3>{service.title}</h3>
+                <p className="service-subtitle">{service.subtitle}</p>
+                <ul className="service-features">
+                    {service.features.map((item, index) => (
+                        <li key={index}>
+                            <strong>{item.bold}</strong> {item.text}
+                        </li>
+                    ))}
+                </ul>
+            </div>
           </div>
         ))}
       </section>
 
-      {/* SECCIÓN: POR QUÉ ELEGIRNOS (Beneficios) */}
-      <section className="why-choose-us">
-        <h2>¿Por qué VisualBytes?</h2>
-        <div className="benefits">
-          <div className="benefit">
-            <h3>Visión 360°</h3>
-            <p>Entendemos el código, pero también entendemos los balances financieros y la identidad de marca.</p>
-          </div>
-          <div className="benefit">
-            <h3>Tecnología de Punta</h3>
-            <p>Usamos stacks modernos (Laravel 12, Kotlin, AWS) que garantizan seguridad y escalabilidad a largo plazo.</p>
-          </div>
-          <div className="benefit">
-            <h3>Diseño que Vende</h3>
-            <p>Interfaces pensadas para el usuario final, no para el programador. Estética pulida y profesional.</p>
-          </div>
+      {/* BLOQUE DE CIERRE: METODOLOGÍA (Versión Clean) */}
+      <section className="methodology-section">
+        <div className="methodology-container">
+            <h2>¿Cómo trabajamos?</h2>
+            <p className="methodology-intro">Fusionamos metodologías ágiles con el rigor de la auditoría.</p>
+            
+            <div className="methodology-steps">
+                <div className="step">
+                    <div className="step-number">01</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Auditoría para entender el negocio y los "dolores" operativos.</p>
+                </div>
+                <div className="step">
+                    <div className="step-number">02</div>
+                    <h4>Diseño (UI/UX)</h4>
+                    <p>Prototipamos la solución visual antes de escribir código.</p>
+                </div>
+                <div className="step">
+                    <div className="step-number">03</div>
+                    <h4>Ingeniería</h4>
+                    <p>Construcción robusta con código limpio (Laravel/Kotlin).</p>
+                </div>
+                <div className="step">
+                    <div className="step-number">04</div>
+                    <h4>Entrega y BI</h4>
+                    <p>Lanzamiento y medición de impacto con datos reales.</p>
+                </div>
+            </div>
+
+            {/* CTA FINAL */}
+            <div className="services-cta">
+                <h3>¿Tu empresa necesita orden y tecnología?</h3>
+                <Link to="/contact">
+                    <button className="cta-button">Solicitar Evaluación Técnica</button>
+                </Link>
+            </div>
         </div>
       </section>
 

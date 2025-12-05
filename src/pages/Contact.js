@@ -111,13 +111,13 @@ const Contact = () => {
         <div className="contact-info">
           <h2>Información de Contacto</h2>
           <p>
-            <strong>Email:</strong> contacto@visualbytes.com
+            <strong>Email:</strong> contacto.visualbytes@gmail.com
           </p>
           <p>
-            <strong>Teléfono:</strong> +56 9 1234 5678
+            <strong>Teléfono:</strong> +56 9 56524788
           </p>
           <p>
-            <strong>Dirección:</strong> Av. Principal 123, Santiago, Chile
+            <strong>Dirección:</strong> Calle 2 #1808, Maule
           </p>
 
           <div className="contact-map">

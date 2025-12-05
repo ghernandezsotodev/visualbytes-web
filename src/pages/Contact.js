@@ -89,7 +89,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              placeholder="Ej: Gonzalo Hernández"
+              placeholder="Ej: Juan Pérez"
               value={formData.name}
               onChange={handleChange}
               required

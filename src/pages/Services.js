@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Services.css';
 
-import serviceImg1 from '../assets/images/service1.png'; 
-import serviceImg2 from '../assets/images/service2.png'; 
+import serviceImg1 from '../assets/images/service1.jpg'; 
+import serviceImg2 from '../assets/images/service2.jpg'; 
 import serviceImg3 from '../assets/images/service3.png'; 
+import serviceImg4 from '../assets/images/service4.png'; 
 
 const servicesData = [
   {
@@ -37,7 +38,7 @@ const servicesData = [
     category: "IMPACTO VISUAL",
     title: '03. Diseño UI/UX & Branding', 
     subtitle: 'Diseño que no solo se ve bien, sino que cumple objetivos de negocio.',
-    image: serviceImg1,
+    image: serviceImg3,
     features: [
         { bold: 'Diseño de Interfaces (UI/UX):', text: 'Prototipado en Figma enfocado en usabilidad y conversión.' },
         { bold: 'Identidad Visual:', text: 'Logotipos y branding corporativo (Adobe Illustrator/Photoshop).' },
@@ -49,7 +50,7 @@ const servicesData = [
     category: "ESTRATEGIA Y NEGOCIOS",
     title: '04. Control de Gestión & BI', 
     subtitle: 'Transformamos datos dispersos en decisiones estratégicas.',
-    image: serviceImg3,
+    image: serviceImg4,
     features: [
         { bold: 'Auditoría de Procesos:', text: 'Analizamos y optimizamos flujos operativos antes de digitalizar.' },
         { bold: 'Dashboards & KPIs:', text: 'Paneles en Power BI para monitoreo de desempeño en tiempo real.' },

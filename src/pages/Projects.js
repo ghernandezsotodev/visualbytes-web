@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: 'Santa Rita Conectada',
-    tags: ['Laravel 12', 'Kotlin Nativo', 'AWS S3', 'Redis', 'Docker'],
+    tags: ['Laravel 12', 'Android Nativo', 'AWS S3', 'Redis', 'Docker', 'Firebase cloud messaging'],
     image: projectImage, 
     shortDescription: 'Plataforma integral de gestión comunitaria. Ecosistema distribuido (Web + App Nativa) con transparencia financiera.',
     liveLink: 'https://www.santaritaconectada.cl/',

@@ -23,10 +23,22 @@ const servicesData = [
   },
   {
     id: 2,
-    category: "", // Vacío por estética
-    title: '02. Desarrollo Móvil Nativo (Android)',
-    subtitle: 'Llevamos tu operación al terreno con aplicaciones reales.',
+    category: "EL NÚCLEO TECNOLÓGICO", 
+    title: '02. Desarrollo Web Moderno & Frontend', 
+    subtitle: 'Interfaces rápidas que enamoran a Google y a tus usuarios.',
     image: serviceImg2,
+    features: [
+        { bold: 'Sitios Ultrarrápidos:', text: 'Arquitectura estática con Astro para máxima velocidad y SEO.' },
+        { bold: 'Aplicaciones Web (SPA):', text: 'Paneles administrativos y plataformas dinámicas con React.js y Next.js.' },
+        { bold: 'Estilizado Profesional:', text: 'Diseño responsivo y limpio utilizando Tailwind CSS.' }
+    ]
+  },
+  {
+    id: 3, 
+    category: "", // Vacío por estética
+    title: '03. Desarrollo Móvil Nativo (Android)',
+    subtitle: 'Llevamos tu operación al terreno con aplicaciones reales.',
+    image: serviceImg3,
     features: [
         { bold: '100% Nativo:', text: 'Kotlin con Jetpack Compose. Rendimiento real, sin tecnologías híbridas.' },
         { bold: 'Funcionalidad Offline:', text: 'Persistencia de datos local (Room) y sincronización automática.' },
@@ -34,11 +46,11 @@ const servicesData = [
     ]
   },
   {
-    id: 3, 
+    id: 4, 
     category: "IMPACTO VISUAL",
-    title: '03. Diseño UI/UX & Branding', 
+    title: '04. Diseño UI/UX & Branding', 
     subtitle: 'Diseño que no solo se ve bien, sino que cumple objetivos de negocio.',
-    image: serviceImg3,
+    image: serviceImg4,
     features: [
         { bold: 'Diseño de Interfaces (UI/UX):', text: 'Prototipado en Figma enfocado en usabilidad y conversión.' },
         { bold: 'Identidad Visual:', text: 'Logotipos y branding corporativo (Adobe Illustrator/Photoshop).' },
@@ -46,13 +58,13 @@ const servicesData = [
     ]
   },
   {
-    id: 4, 
+    id: 5, 
     category: "ESTRATEGIA Y NEGOCIOS",
-    title: '04. Control de Gestión & BI', 
+    title: '05. Control de Gestión & BI', 
     subtitle: 'Transformamos datos dispersos en decisiones estratégicas.',
-    image: serviceImg4,
+    image: serviceImg1,
     features: [
-        { bold: 'Auditoría de Procesos:', text: 'Analizamos y optimizamos flujos operativos antes de digitalizar.' },
+        { bold: 'Auditoría de Procesos:', text: 'Levantamiento y modelado (BPMN/Bizagi) para optimizar flujos antes de digitalizar.' },
         { bold: 'Dashboards & KPIs:', text: 'Paneles en Power BI para monitoreo de desempeño en tiempo real.' },
         { bold: 'Gestión de Riesgos:', text: 'Detección de fugas e ineficiencias para soluciones de raíz.' }
     ]
@@ -62,8 +74,6 @@ const servicesData = [
 const Services = () => {
   return (
     <div className="services-page">
-      {/* Navbar eliminado (ya está en App.js) */}
-
       {/* HEADER / TÍTULO */}
       <header className="services-hero">
         <h1>Ingeniería, Gestión y Diseño</h1>
@@ -75,18 +85,19 @@ const Services = () => {
         {servicesData.map((service) => (
           <div key={service.id} className="service-card-detail">
             <div className="service-img-container">
-                 {/* Añadimos onError por si falla la imagen */}
-                 <img 
+                <img 
                     src={service.image} 
                     alt={service.title} 
                     onError={(e) => {e.target.style.display='none'}}
-                 />
+                />
             </div>
+
             <div className="service-info">
                 {service.category && <span className="service-category">{service.category}</span>}
 
                 <h3>{service.title}</h3>
                 <p className="service-subtitle">{service.subtitle}</p>
+                
                 <ul className="service-features">
                     {service.features.map((item, index) => (
                         <li key={index}>
@@ -99,7 +110,7 @@ const Services = () => {
         ))}
       </section>
 
-      {/* BLOQUE DE CIERRE: METODOLOGÍA */}
+      {/* METODOLOGÍA */}
       <section className="methodology-section">
         <div className="methodology-container">
             <h2>¿Cómo trabajamos?</h2>
@@ -114,22 +125,22 @@ const Services = () => {
                 <div className="step">
                     <div className="step-number">02</div>
                     <h4>UX/UI & Prototipado</h4>
-                    <p>Diseño de la experiencia de usuario y prototipado interactivo en Figma para obtener la solución visual antes de escribir la primera línea de código.</p>
+                    <p>Diseño de la experiencia de usuario y prototipado interactivo en Figma.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">03</div>
                     <h4>Ingeniería & QA</h4>
-                    <p>Construcción robusta con arquitectura limpia, código versionado (Git), y aseguramiento de calidad (QA) que garantiza estabilidad y seguridad.</p>
+                    <p>Arquitectura limpia, versionado (Git), y aseguramiento de calidad para estabilidad y seguridad.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">04</div>
                     <h4>DevOps & Despliegue</h4>
-                    <p>Despliegue automatizado del sistema en contenedores Docker y ambientes Cloud (AWS), garantizando la disponibilidad y la escalabilidad.</p>
+                    <p>Despliegue automatizado en Docker y Cloud (AWS), asegurando disponibilidad y escalabilidad.</p>
                 </div>
                 <div className="step">
                     <div className="step-number">05</div>
                     <h4>Control de Gestión & BI</h4>
-                    <p>Medición de los KPIs definidos en la Fase 1 y creación de Dashboards en Power BI para validar el retorno de la inversión (ROI) con datos reales.</p>
+                    <p>Medición de KPIs y visualización en Power BI para evaluar el retorno del proyecto.</p>
                 </div>
             </div>
 
@@ -142,8 +153,6 @@ const Services = () => {
             </div>
         </div>
       </section>
-
-      {/* Footer eliminado (ya está en App.js) */}
     </div>
   );
 };

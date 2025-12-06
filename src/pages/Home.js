@@ -41,20 +41,19 @@ const Home = () => {
             {/* Núcleo Técnico */}
             <div className="about-card tech">
               <h3>El Núcleo Técnico</h3>
-              <p>
-                Un <strong>Ingeniero Informático con mención Empresarial</strong> experto en 
-                arquitecturas complejas. Construye sistemas <strong>blindados, escalables 
-                y de alto rendimiento</strong>.
+                <p>
+                Ingeniero Informático con enfoque empresarial. Especializado en diseñar y 
+                desarrollar sistemas escalables, seguros y alineados con objetivos de negocio.
               </p>
             </div>
 
             {/* Visión de Negocio */}
             <div className="about-card business">
               <h3>La Visión de Negocio</h3>
-              <p>
-                Un <strong>Auditor y Diseñador</strong> que garantiza que cada desarrollo sea 
-                estéticamente impecable, financieramente viable y optimice tus procesos reales.
-              </p>
+                <p>
+                  Profesional en auditoría y diseño, enfocado en crear soluciones que combinan 
+                  estética, eficiencia operativa y viabilidad financiera.
+                </p>
             </div>
           </div>
         </div>

@@ -146,7 +146,7 @@ const Contact = () => {
           
           <div className="info-item">
             <strong>Dirección</strong>
-            <p>Calle 2 #1808, Maule, Chile</p>
+            <p>Talca, Chile</p>
           </div>
         </div>
       </section>

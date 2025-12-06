@@ -132,6 +132,17 @@ const Projects = () => {
                         Equipo: {selectedProject.fullDescription.team}
                     </p>
                 </div>
+                <div className="modal-section" style={{ textAlign: 'center', marginTop: '10px' }}>
+                  <a 
+                    href={selectedProject.liveLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-live-link"
+                  >
+                    Ver Proyecto en Línea →
+                  </a>
+                </div>
+
             </div>
 
             <button 
